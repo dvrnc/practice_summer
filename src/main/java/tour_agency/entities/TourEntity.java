@@ -23,7 +23,9 @@ public class TourEntity extends BaseEntity {
 
     private Set<BookingEntity> bookingEntitySet;
 
-    public TourEntity(String direction, Integer cost, Integer numberSeats, LocalDate startDate, CarrierEntity carrier, LocalDate finishDate, Set<BookingEntity> bookingEntitySet) {
+    private Set<FeatureEntity> featureEntitySet;
+
+    public TourEntity(String direction, Integer cost, Integer numberSeats, LocalDate startDate, CarrierEntity carrier, LocalDate finishDate, Set<BookingEntity> bookingEntitySet, Set<FeatureEntity> featureEntitySet) {
         this.direction = direction;
         this.cost = cost;
         this.numberSeats = numberSeats;
@@ -31,6 +33,7 @@ public class TourEntity extends BaseEntity {
         this.carrier = carrier;
         this.finishDate = finishDate;
         this.bookingEntitySet = bookingEntitySet;
+        this.featureEntitySet = featureEntitySet;
     }
 
     protected TourEntity() {
@@ -98,5 +101,13 @@ public class TourEntity extends BaseEntity {
 
     public void setBookingEntitySet (Set<BookingEntity> bookingEntitySet) {
         this.bookingEntitySet = bookingEntitySet;
+    }
+    @ManyToMany(mappedBy = "tourEntitySet",targetEntity = FeatureEntity.class)
+    public Set<FeatureEntity> getFeatureEntitySet() {
+        return featureEntitySet;
+    }
+
+    public void setFeatureEntitySet(Set<FeatureEntity> featureEntitySet) {
+        this.featureEntitySet = featureEntitySet;
     }
 }

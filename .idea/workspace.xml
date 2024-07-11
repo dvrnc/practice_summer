@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e003bc54-a8fa-4e72-afd4-9eb54bcd0cd0" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/BaseEntity.java" afterDir="false" />
+    <list default="true" id="e003bc54-a8fa-4e72-afd4-9eb54bcd0cd0" name="Changes" comment="new table">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/FeatureEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/BookingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/CarrierRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/ClientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/FeatureRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/TourRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/BookingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/BookingEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/BookingId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/CarrierEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/CarrierEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/ClientEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/ClientEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/EmployeeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/EmployeeEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/TourEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/TourEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -110,7 +114,8 @@
       <updated>1720535834697</updated>
       <workItem from="1720618418770" duration="13000" />
       <workItem from="1720618557381" duration="3099000" />
-      <workItem from="1720690120047" duration="5507000" />
+      <workItem from="1720690120047" duration="11697000" />
+      <workItem from="1720707939554" duration="6199000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -120,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720690309194</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new table">
+      <option name="closed" value="true" />
+      <created>1720700903677</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720700903678</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +152,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="new table" />
+    <option name="LAST_COMMIT_MESSAGE" value="new table" />
   </component>
 </project>

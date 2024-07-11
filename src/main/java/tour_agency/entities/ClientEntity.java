@@ -2,7 +2,6 @@ package tour_agency.entities;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,15 +11,15 @@ public class ClientEntity extends BaseEntity {
     private String name;
     private String surname;
     private String email;
-    private String features;
+    private Set<FeatureEntity> featureEntitySet;
     private Set<BookingEntity> bookingEntitySet;
 
-    public ClientEntity(String name, String surname, String email, Set<BookingEntity> bookingEntitySet, String features) {
+    public ClientEntity(String name, String surname, String email, Set<BookingEntity> bookingEntitySet,Set<FeatureEntity> featureEntitiesSet ) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.bookingEntitySet = bookingEntitySet;
-        this.features = features;
+        this.featureEntitySet = featureEntitiesSet;
     }
 
     protected ClientEntity() {
@@ -53,13 +52,14 @@ public class ClientEntity extends BaseEntity {
         this.email = email;
     }
 
-    @Column (name = "features")
-    public String getFeatures() {
-        return features;
+
+    @ManyToMany(mappedBy = "clientEntitySet",targetEntity = FeatureEntity.class)
+    public Set<FeatureEntity> getFeatureEntitiesSet() {
+        return featureEntitySet;
     }
 
-    public void setFeatures(String features) {
-        this.features = features;
+    public void setFeatureEntitiesSet(Set<FeatureEntity> featureEntitiesSet) {
+        this.featureEntitySet = featureEntitiesSet;
     }
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, targetEntity = BookingEntity.class, mappedBy = "client")
