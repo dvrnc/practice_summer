@@ -3,12 +3,11 @@ package tour_agency.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "Tour")
-public class TourEntity {
-    private Long id;
+@Table(name = "tour")
+public class TourEntity extends BaseEntity {
 
     private String direction;
 
@@ -22,21 +21,22 @@ public class TourEntity {
 
     private CarrierEntity carrier;
 
-    private List<BookingEntity> bookingEntityList;
+    private Set<BookingEntity> bookingEntitySet;
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    public Long getId() {
-        return id;
+    public TourEntity(String direction, Integer cost, Integer numberSeats, LocalDate startDate, CarrierEntity carrier, LocalDate finishDate, Set<BookingEntity> bookingEntitySet) {
+        this.direction = direction;
+        this.cost = cost;
+        this.numberSeats = numberSeats;
+        this.startDate = startDate;
+        this.carrier = carrier;
+        this.finishDate = finishDate;
+        this.bookingEntitySet = bookingEntitySet;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    protected TourEntity() {
     }
 
-    @Column
+    @Column (name = "direction")
     public String getDirection() {
         return direction;
     }
@@ -45,7 +45,7 @@ public class TourEntity {
         this.direction = direction;
     }
 
-    @Column
+    @Column (name = "cost")
     public Integer getCost() {
         return cost;
     }
@@ -54,7 +54,7 @@ public class TourEntity {
         this.cost = cost;
     }
 
-    @Column
+    @Column (name = "number_seats")
     public Integer getNumberSeats() {
         return numberSeats;
     }
@@ -63,7 +63,7 @@ public class TourEntity {
         this.numberSeats = numberSeats;
     }
 
-    @Column
+    @Column (name = "start_date")
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -72,7 +72,7 @@ public class TourEntity {
         this.startDate = startDate;
     }
 
-    @Column
+    @Column (name = "finish_date")
     public LocalDate getFinishDate() {
         return finishDate;
     }
@@ -92,11 +92,11 @@ public class TourEntity {
     }
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, targetEntity = BookingEntity.class, mappedBy = "tour")
-    public List<BookingEntity> getBookingEntityList() {
-        return bookingEntityList;
+    public Set<BookingEntity> getBookingEntitySet() {
+        return bookingEntitySet;
     }
 
-    public void setBookingEntityList(List<BookingEntity> bookingEntityList) {
-        this.bookingEntityList = bookingEntityList;
+    public void setBookingEntitySet (Set<BookingEntity> bookingEntitySet) {
+        this.bookingEntitySet = bookingEntitySet;
     }
 }

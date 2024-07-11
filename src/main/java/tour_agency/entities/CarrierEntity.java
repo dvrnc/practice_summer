@@ -1,14 +1,11 @@
 package tour_agency.entities;
 
 import jakarta.persistence.*;
-
-import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "Carrier")
-public class CarrierEntity {
-
-    private Long id;
+@Table(name = "carrier")
+public class CarrierEntity extends BaseEntity {
 
     private String transport;
 
@@ -16,21 +13,19 @@ public class CarrierEntity {
 
     private Integer costTransportation;
 
-    private List<TourEntity> tourEntityList;
+    private Set<TourEntity> tourEntitySet;
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    public Long getId() {
-        return id;
+    public CarrierEntity(String transport, String nameCompany, Integer costTransportation, Set<TourEntity> tourEntitySet) {
+        this.transport = transport;
+        this.nameCompany = nameCompany;
+        this.costTransportation = costTransportation;
+        this.tourEntitySet= tourEntitySet;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    protected CarrierEntity() {
     }
 
-    @Column
+    @Column (name = "transport")
     public String getTransport() {
         return transport;
     }
@@ -39,7 +34,7 @@ public class CarrierEntity {
         this.transport = transport;
     }
 
-    @Column
+    @Column (name = "name_company")
     public String getNameCompany() {
         return nameCompany;
     }
@@ -48,7 +43,7 @@ public class CarrierEntity {
         this.nameCompany = nameCompany;
     }
 
-    @Column
+    @Column (name = "cost_transportation")
     public Integer getCostTransportation() {
         return costTransportation;
     }
@@ -58,11 +53,11 @@ public class CarrierEntity {
     }
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, targetEntity = TourEntity.class, mappedBy = "carrier")
-    public List<TourEntity> getTourEntityList() {
-        return tourEntityList;
+    public Set<TourEntity> getTourEntitySet() {
+        return tourEntitySet;
     }
 
-    public void setTourEntityList(List<TourEntity> tourEntityList) {
-        this.tourEntityList = tourEntityList;
+    public void setTourEntitySet(Set<TourEntity> tourEntitySet) {
+        this.tourEntitySet = tourEntitySet;
     }
 }

@@ -5,25 +5,25 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Booking")
-public class BookingEntity {
+@Table(name = "booking")
+public class BookingEntity extends BaseEntity {
 
-    private BookingId id;
     private ClientEntity client;
     private TourEntity tour;
     private EmployeeEntity employee;
     private LocalDate dateBooking;
 
-    @EmbeddedId
-    public BookingId getId() {
-        return id;
+    public BookingEntity(ClientEntity client, TourEntity tour, EmployeeEntity employee, LocalDate dateBooking) {
+        this.client = client;
+        this.tour = tour;
+        this.employee = employee;
+        this.dateBooking = dateBooking;
     }
 
-    public void setId(BookingId id) {
-        this.id = id;
+    protected BookingEntity() {
     }
 
-    @Column
+    @Column(name = "date_booking")
     public LocalDate getDateBooking() {
         return dateBooking;
     }
@@ -33,7 +33,7 @@ public class BookingEntity {
     }
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-    @JoinColumn
+    @JoinColumn(name = "employee_id")
     public EmployeeEntity getEmployee() {
         return employee;
     }
@@ -43,7 +43,7 @@ public class BookingEntity {
     }
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-    @MapsId("clientId")
+    @JoinColumn(name = "client_id")
     public ClientEntity getClient() {
         return client;
     }
@@ -53,7 +53,7 @@ public class BookingEntity {
     }
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-    @MapsId("tourId")
+    @JoinColumn(name = "tour_id")
     public TourEntity getTour() {
         return tour;
     }

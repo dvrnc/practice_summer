@@ -3,30 +3,30 @@ package tour_agency.entities;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "Client")
-public class ClientEntity {
-    private Long id;
+@Table(name = "client")
+public class ClientEntity extends BaseEntity {
+
     private String name;
     private String surname;
     private String email;
     private String features;
-    private List<BookingEntity> bookingEntityList;
+    private Set<BookingEntity> bookingEntitySet;
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    public Long getId() {
-        return id;
+    public ClientEntity(String name, String surname, String email, Set<BookingEntity> bookingEntitySet, String features) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.bookingEntitySet = bookingEntitySet;
+        this.features = features;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    protected ClientEntity() {
     }
 
-    @Column
+    @Column (name = "name")
     public String getName() {
         return name;
     }
@@ -35,7 +35,7 @@ public class ClientEntity {
         this.name = name;
     }
 
-    @Column
+    @Column (name = "surname")
     public String getSurname() {
         return surname;
     }
@@ -44,7 +44,7 @@ public class ClientEntity {
         this.surname = surname;
     }
 
-    @Column
+    @Column (name = "email")
     public String getEmail() {
         return email;
     }
@@ -53,7 +53,7 @@ public class ClientEntity {
         this.email = email;
     }
 
-    @Column
+    @Column (name = "features")
     public String getFeatures() {
         return features;
     }
@@ -63,12 +63,11 @@ public class ClientEntity {
     }
 
     @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY, targetEntity = BookingEntity.class, mappedBy = "client")
-    public List<BookingEntity> getBookingEntityList() {
-        return bookingEntityList;
+    public Set<BookingEntity> getBookingEntitySet() {
+        return bookingEntitySet;
     }
 
-    public void setBookingEntityList(List<BookingEntity> bookingEntityList) {
-        this.bookingEntityList = bookingEntityList;
+    public void setBookingEntitySet (Set<BookingEntity> bookingEntitySet) {
+        this.bookingEntitySet = bookingEntitySet;
     }
-
 }

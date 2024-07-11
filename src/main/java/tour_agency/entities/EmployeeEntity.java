@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Employee")
-public class EmployeeEntity {
-    private Long id;
+@Table(name = "employee")
+public class EmployeeEntity extends BaseEntity {
 
     private String name;
 
@@ -16,19 +15,17 @@ public class EmployeeEntity {
 
     private String contactNumber;
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    public Long getId() {
-        return id;
+    public EmployeeEntity(String name, String surname, LocalDate dateEmployment, String contactNumber) {
+        this.name = name;
+        this.surname = surname;
+        this.dateEmployment = dateEmployment;
+        this.contactNumber = contactNumber;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    protected EmployeeEntity() {
     }
 
-    @Column
+    @Column (name = "name")
     public String getName() {
         return name;
     }
@@ -37,7 +34,7 @@ public class EmployeeEntity {
         this.name = name;
     }
 
-    @Column
+    @Column (name = "surname")
     public String getSurname() {
         return surname;
     }
@@ -46,7 +43,7 @@ public class EmployeeEntity {
         this.surname = surname;
     }
 
-    @Column
+    @Column (name = "date_employment")
     public LocalDate getDateEmployment() {
         return dateEmployment;
     }
@@ -55,7 +52,7 @@ public class EmployeeEntity {
         this.dateEmployment = dateEmployment;
     }
 
-    @Column
+    @Column (name = "contact_number")
     public String getContactNumber() {
         return contactNumber;
     }
