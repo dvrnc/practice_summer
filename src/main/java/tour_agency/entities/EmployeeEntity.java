@@ -1,6 +1,7 @@
 package tour_agency.entities;
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
@@ -8,11 +9,8 @@ import java.time.LocalDate;
 public class EmployeeEntity extends BaseEntity {
 
     private String name;
-
     private String surname;
-
     private LocalDate dateEmployment;
-
     private String contactNumber;
 
     public EmployeeEntity(String name, String surname, LocalDate dateEmployment, String contactNumber) {
@@ -25,7 +23,7 @@ public class EmployeeEntity extends BaseEntity {
     protected EmployeeEntity() {
     }
 
-    @Column (name = "name")
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -34,7 +32,7 @@ public class EmployeeEntity extends BaseEntity {
         this.name = name;
     }
 
-    @Column (name = "surname")
+    @Column(name = "surname")
     public String getSurname() {
         return surname;
     }
@@ -43,7 +41,7 @@ public class EmployeeEntity extends BaseEntity {
         this.surname = surname;
     }
 
-    @Column (name = "date_employment")
+    @Column(name = "date_employment")
     public LocalDate getDateEmployment() {
         return dateEmployment;
     }
@@ -52,7 +50,7 @@ public class EmployeeEntity extends BaseEntity {
         this.dateEmployment = dateEmployment;
     }
 
-    @Column (name = "contact_number")
+    @Column(name = "contact_number")
     public String getContactNumber() {
         return contactNumber;
     }

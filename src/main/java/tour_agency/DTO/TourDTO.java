@@ -10,19 +10,12 @@ import java.util.Set;
 public class TourDTO {
     private Long id;
     private String direction;
-
     private Integer cost;
-
     private Integer numberSeats;
-
     private LocalDate startDate;
-
     private LocalDate finishDate;
-
     private CarrierEntity carrier;
-
     private Set<BookingEntity> bookingEntitySet;
-
     private Set<FeatureEntity> featureEntitySet;
 
     public TourDTO(Long id,String direction, Integer cost, Integer numberSeats, LocalDate startDate, LocalDate finishDate, CarrierEntity carrier, Set<BookingEntity> bookingEntitySet, Set<FeatureEntity> featureEntitySet) {

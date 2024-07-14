@@ -5,6 +5,6 @@ import tour_agency.entities.TourEntity;
 
 import java.util.Set;
 
-public interface TourRecommendService {
-    Set<TourEntity> recommendTours(ClientDTO clientDTO);
+public interface TourHistoryClientService {
+    Set<TourEntity> historyClientTours(ClientDTO clientDTO);
 }

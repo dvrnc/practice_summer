@@ -7,6 +7,5 @@ import tour_agency.entities.TourEntity;
 
 import java.util.Set;
 
-public interface BookingRepository extends GeneralRepository <BookingEntity, Long> {
-
+public interface BookingRepository extends GeneralRepository<BookingEntity, Long> {
 }

@@ -10,6 +10,7 @@ import tour_agency.repositories.ClientRepository;
 import tour_agency.repositories.FeatureRepository;
 import tour_agency.repositories.TourRepository;
 import tour_agency.services.TourRecommendService;
+
 import java.util.Collections;
 import java.util.Set;
 
@@ -33,7 +34,7 @@ public class TourRecommendServiceImpl implements TourRecommendService {
         }
         Set<ClientEntity> clientEntitySet = Collections.singleton(clientEntity);
         Set<FeatureEntity> featureEntities = featureRepository.findByClient(clientEntitySet);
-        Set<TourEntity> tourEntitySet = tourRepository.findByFeatureEntitySet (featureEntities);
+        Set<TourEntity> tourEntitySet = tourRepository.findByFeatureEntitySet(featureEntities);
         return tourEntitySet;
     }
 }

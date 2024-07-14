@@ -29,6 +29,7 @@ public class FeatureEntity extends BaseEntity {
     public void setNameFeature(String nameFeature) {
         this.nameFeature = nameFeature;
     }
+
     @ManyToMany(targetEntity = ClientEntity.class)
     @JoinTable(name = "clients_features")
     public Set<ClientEntity> getClientEntitySet() {
@@ -38,6 +39,7 @@ public class FeatureEntity extends BaseEntity {
     public void setClientEntitySet(Set<ClientEntity> clientEntitySet) {
         this.clientEntitySet = clientEntitySet;
     }
+
     @ManyToMany(targetEntity = TourEntity.class)
     @JoinTable(name = "tours_features")
     public Set<TourEntity> getTourEntitySet() {

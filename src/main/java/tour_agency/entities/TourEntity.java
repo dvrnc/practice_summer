@@ -10,19 +10,12 @@ import java.util.Set;
 public class TourEntity extends BaseEntity {
 
     private String direction;
-
     private Integer cost;
-
     private Integer numberSeats;
-
     private LocalDate startDate;
-
     private LocalDate finishDate;
-
     private CarrierEntity carrier;
-
     private Set<BookingEntity> bookingEntitySet;
-
     private Set<FeatureEntity> featureEntitySet;
 
     public TourEntity(String direction, Integer cost, Integer numberSeats, LocalDate startDate, CarrierEntity carrier, LocalDate finishDate, Set<BookingEntity> bookingEntitySet, Set<FeatureEntity> featureEntitySet) {
@@ -39,7 +32,7 @@ public class TourEntity extends BaseEntity {
     protected TourEntity() {
     }
 
-    @Column (name = "direction")
+    @Column(name = "direction")
     public String getDirection() {
         return direction;
     }
@@ -48,7 +41,7 @@ public class TourEntity extends BaseEntity {
         this.direction = direction;
     }
 
-    @Column (name = "cost")
+    @Column(name = "cost")
     public Integer getCost() {
         return cost;
     }
@@ -57,7 +50,7 @@ public class TourEntity extends BaseEntity {
         this.cost = cost;
     }
 
-    @Column (name = "number_seats")
+    @Column(name = "number_seats")
     public Integer getNumberSeats() {
         return numberSeats;
     }
@@ -66,7 +59,7 @@ public class TourEntity extends BaseEntity {
         this.numberSeats = numberSeats;
     }
 
-    @Column (name = "start_date")
+    @Column(name = "start_date")
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -75,7 +68,7 @@ public class TourEntity extends BaseEntity {
         this.startDate = startDate;
     }
 
-    @Column (name = "finish_date")
+    @Column(name = "finish_date")
     public LocalDate getFinishDate() {
         return finishDate;
     }
@@ -99,10 +92,11 @@ public class TourEntity extends BaseEntity {
         return bookingEntitySet;
     }
 
-    public void setBookingEntitySet (Set<BookingEntity> bookingEntitySet) {
+    public void setBookingEntitySet(Set<BookingEntity> bookingEntitySet) {
         this.bookingEntitySet = bookingEntitySet;
     }
-    @ManyToMany(mappedBy = "tourEntitySet",targetEntity = FeatureEntity.class)
+
+    @ManyToMany(mappedBy = "tourEntitySet", targetEntity = FeatureEntity.class)
     public Set<FeatureEntity> getFeatureEntitySet() {
         return featureEntitySet;
     }

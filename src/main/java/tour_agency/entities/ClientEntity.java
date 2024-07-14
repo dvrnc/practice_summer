@@ -14,7 +14,7 @@ public class ClientEntity extends BaseEntity {
     private Set<FeatureEntity> featureEntitySet;
     private Set<BookingEntity> bookingEntitySet;
 
-    public ClientEntity(String name, String surname, String email, Set<BookingEntity> bookingEntitySet,Set<FeatureEntity> featureEntitiesSet ) {
+    public ClientEntity(String name, String surname, String email, Set<BookingEntity> bookingEntitySet, Set<FeatureEntity> featureEntitiesSet) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -25,7 +25,7 @@ public class ClientEntity extends BaseEntity {
     protected ClientEntity() {
     }
 
-    @Column (name = "name")
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -34,7 +34,7 @@ public class ClientEntity extends BaseEntity {
         this.name = name;
     }
 
-    @Column (name = "surname")
+    @Column(name = "surname")
     public String getSurname() {
         return surname;
     }
@@ -43,7 +43,7 @@ public class ClientEntity extends BaseEntity {
         this.surname = surname;
     }
 
-    @Column (name = "email")
+    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -53,7 +53,7 @@ public class ClientEntity extends BaseEntity {
     }
 
 
-    @ManyToMany(mappedBy = "clientEntitySet",targetEntity = FeatureEntity.class)
+    @ManyToMany(mappedBy = "clientEntitySet", targetEntity = FeatureEntity.class)
     public Set<FeatureEntity> getFeatureEntitiesSet() {
         return featureEntitySet;
     }
@@ -67,7 +67,7 @@ public class ClientEntity extends BaseEntity {
         return bookingEntitySet;
     }
 
-    public void setBookingEntitySet (Set<BookingEntity> bookingEntitySet) {
+    public void setBookingEntitySet(Set<BookingEntity> bookingEntitySet) {
         this.bookingEntitySet = bookingEntitySet;
     }
 }

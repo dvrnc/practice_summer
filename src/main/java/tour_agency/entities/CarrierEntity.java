@@ -8,11 +8,8 @@ import java.util.Set;
 public class CarrierEntity extends BaseEntity {
 
     private String transport;
-
     private String nameCompany;
-
     private Integer costTransportation;
-
     private Set<TourEntity> tourEntitySet;
 
     public CarrierEntity(String transport, String nameCompany, Integer costTransportation, Set<TourEntity> tourEntitySet) {
