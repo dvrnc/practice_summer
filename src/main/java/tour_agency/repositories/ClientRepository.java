@@ -1,7 +1,8 @@
 package tour_agency.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import tour_agency.entities.ClientEntity;
 
-public interface ClientRepository extends JpaRepository <ClientEntity, Long> {
+
+public interface ClientRepository extends GeneralRepository <ClientEntity, Long> {
+    ClientEntity findByClientId(Long id);
 }
