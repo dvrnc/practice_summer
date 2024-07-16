@@ -4,29 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e003bc54-a8fa-4e72-afd4-9eb54bcd0cd0" name="Changes" comment="add controllers">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/exception/ClientNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/exception/EntityNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/exception/ExceptionControllers.java" afterDir="false" />
+    <list default="true" id="e003bc54-a8fa-4e72-afd4-9eb54bcd0cd0" name="Changes" comment="add mapping, exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/ParametrsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/ParametrsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/TourDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/TourDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourHistoryClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourHistoryClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourPreferenceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourPreferenceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourRecommendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourRecommendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/CarrierEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/CarrierEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/TourEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/TourEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/FeatureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/FeatureRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/GeneralRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/GeneralRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/TourRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/TourRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourHistoryClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourHistoryClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourPreferenceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourPreferenceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourRecommendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourRecommendServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourHistoryClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourHistoryClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourPreferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourPreferenceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourRecommendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourRecommendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/exception/EntityNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/exception/ExceptionControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/exception/ExceptionControllers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +113,7 @@
       <workItem from="1720956913080" duration="1723000" />
       <workItem from="1720960095519" duration="10848000" />
       <workItem from="1721035601039" duration="14802000" />
-      <workItem from="1721123991774" duration="13060000" />
+      <workItem from="1721123991774" duration="15588000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -190,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721130873759</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add mapping, exception">
+      <option name="closed" value="true" />
+      <created>1721140009779</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721140009779</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +204,7 @@
     <MESSAGE value="two service" />
     <MESSAGE value="three service done" />
     <MESSAGE value="add controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="add controllers" />
+    <MESSAGE value="add mapping, exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="add mapping, exception" />
   </component>
 </project>

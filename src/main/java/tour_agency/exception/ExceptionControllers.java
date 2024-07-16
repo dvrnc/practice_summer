@@ -15,11 +15,4 @@ public class ExceptionControllers {
     String clientNotFoundExceptionHandler(ClientNotFoundException ex) {
         return ex.getMessage();
     }
-
-    @ResponseBody
-    @ExceptionHandler(EntityNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    String entityNotFoundExceptionHandler(EntityNotFoundException ex) {
-        return ex.getMessage();
-    }
 }
