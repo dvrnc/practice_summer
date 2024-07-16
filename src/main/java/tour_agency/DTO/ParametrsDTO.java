@@ -1,17 +1,16 @@
 package tour_agency.DTO;
 
-import org.springframework.data.repository.query.Param;
-
 import java.time.LocalDate;
 
 public class ParametrsDTO {
-   private String direction;
+    private String direction;
     private Integer costLow;
     private Integer costHigh;
     private Integer numberSeatsLow;
     private Integer numberSeatsHigh;
     private LocalDate startDate;
     private LocalDate finishDate;
+
     public ParametrsDTO() {
     }
 
@@ -79,5 +78,18 @@ public class ParametrsDTO {
 
     public void setFinishDate(LocalDate finishDate) {
         this.finishDate = finishDate;
+    }
+
+    @Override
+    public String toString() {
+        return "ParametrsDTO{" +
+                "direction='" + direction + '\'' +
+                ", costLow=" + costLow +
+                ", costHigh=" + costHigh +
+                ", numberSeatsLow=" + numberSeatsLow +
+                ", numberSeatsHigh=" + numberSeatsHigh +
+                ", startDate=" + startDate +
+                ", finishDate=" + finishDate +
+                '}';
     }
 }

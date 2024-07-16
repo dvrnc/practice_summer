@@ -6,6 +6,7 @@ import tour_agency.DTO.ClientDTO;
 import tour_agency.DTO.TourDTO;
 import tour_agency.entities.ClientEntity;
 import tour_agency.entities.TourEntity;
+import tour_agency.exception.ClientNotFoundException;
 import tour_agency.repositories.ClientRepository;
 import tour_agency.repositories.TourRepository;
 import tour_agency.services.TourHistoryClientService;
@@ -27,9 +28,9 @@ public class TourHistoryClientServiceImpl implements TourHistoryClientService {
 
     @Override
     public Set<TourDTO> historyClientTours(ClientDTO clientDTO) {
-        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId());
+        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId()).orElseThrow(() -> new ClientNotFoundException("Client doesn't exist"));
         Set<TourEntity> tourEntitySet = tourRepository.findToursByClientId(clientEntity);
-        Set <TourDTO> tourDTOs = tourEntitySet.stream()
+        Set<TourDTO> tourDTOs = tourEntitySet.stream()
                 .map(tourEntity -> modelMapper.map(tourEntity, TourDTO.class))
                 .collect(Collectors.toSet());
         return tourDTOs;

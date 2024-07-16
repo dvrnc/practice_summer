@@ -1,10 +1,6 @@
 package tour_agency.DTO;
 
-import tour_agency.entities.BookingEntity;
-import tour_agency.entities.FeatureEntity;
-
 import java.time.LocalDate;
-import java.util.Set;
 
 public class TourDTO {
     private Long id;
@@ -13,8 +9,8 @@ public class TourDTO {
     private LocalDate startDate;
     private LocalDate finishDate;
 
-    public TourDTO(Long id,String direction, Integer cost, LocalDate startDate, LocalDate finishDate) {
-        this.id=id;
+    public TourDTO(Long id, String direction, Integer cost, LocalDate startDate, LocalDate finishDate) {
+        this.id = id;
         this.direction = direction;
         this.cost = cost;
         this.startDate = startDate;

@@ -3,6 +3,8 @@ package tour_agency.repositories;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;
 
+import java.util.Optional;
+
 @NoRepositoryBean
 public interface GeneralRepository<T, ID> extends Repository<T, ID> {
     <S extends T> S save(S entity);
@@ -13,7 +15,7 @@ public interface GeneralRepository<T, ID> extends Repository<T, ID> {
 
     Iterable<T> findAllById(Iterable<ID> ids);
 
-    T findById(ID id);
+    Optional<T> findById(ID id);
 
     boolean existsById(ID id);
 }

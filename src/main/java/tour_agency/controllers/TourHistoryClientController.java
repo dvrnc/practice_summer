@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tour_agency.DTO.ClientDTO;
 import tour_agency.DTO.TourDTO;
-import tour_agency.entities.TourEntity;
 import tour_agency.services.TourHistoryClientService;
 
 import java.util.Set;
@@ -17,6 +16,7 @@ public class TourHistoryClientController {
     public TourHistoryClientController(TourHistoryClientService tourHistoryClientService) {
         this.tourHistoryClientService = tourHistoryClientService;
     }
+
     @GetMapping("/toursHistoryClient")
     public Set<TourDTO> historyClientTours(@RequestBody ClientDTO clientDTO) {
         return tourHistoryClientService.historyClientTours(clientDTO);

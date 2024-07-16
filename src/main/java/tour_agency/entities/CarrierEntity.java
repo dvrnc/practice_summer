@@ -1,6 +1,7 @@
 package tour_agency.entities;
 
 import jakarta.persistence.*;
+
 import java.util.Set;
 
 @Entity
@@ -16,13 +17,13 @@ public class CarrierEntity extends BaseEntity {
         this.transport = transport;
         this.nameCompany = nameCompany;
         this.costTransportation = costTransportation;
-        this.tourEntitySet= tourEntitySet;
+        this.tourEntitySet = tourEntitySet;
     }
 
     protected CarrierEntity() {
     }
 
-    @Column (name = "transport")
+    @Column(name = "transport")
     public String getTransport() {
         return transport;
     }
@@ -31,7 +32,7 @@ public class CarrierEntity extends BaseEntity {
         this.transport = transport;
     }
 
-    @Column (name = "name_company")
+    @Column(name = "name_company")
     public String getNameCompany() {
         return nameCompany;
     }
@@ -40,7 +41,7 @@ public class CarrierEntity extends BaseEntity {
         this.nameCompany = nameCompany;
     }
 
-    @Column (name = "cost_transportation")
+    @Column(name = "cost_transportation")
     public Integer getCostTransportation() {
         return costTransportation;
     }

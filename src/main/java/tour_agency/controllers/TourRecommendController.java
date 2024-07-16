@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import tour_agency.DTO.ClientDTO;
 import tour_agency.DTO.TourDTO;
-import tour_agency.entities.TourEntity;
 import tour_agency.services.TourRecommendService;
 
 import java.util.Set;
@@ -18,8 +17,9 @@ public class TourRecommendController {
     public TourRecommendController(TourRecommendService tourRecommendService) {
         this.tourRecommendService = tourRecommendService;
     }
+
     @GetMapping("/recommendTours")
-    public Set<TourDTO> recommendTours(@RequestBody ClientDTO clientDTO){
+    public Set<TourDTO> recommendTours(@RequestBody ClientDTO clientDTO) {
         System.out.println(clientDTO.getId());
         return tourRecommendService.recommendTours(clientDTO);
     }

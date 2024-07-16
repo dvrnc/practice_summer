@@ -1,6 +1,5 @@
 package tour_agency.services.Impl;
 
-import jakarta.persistence.EntityNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import tour_agency.DTO.ClientDTO;
@@ -8,6 +7,7 @@ import tour_agency.DTO.TourDTO;
 import tour_agency.entities.ClientEntity;
 import tour_agency.entities.FeatureEntity;
 import tour_agency.entities.TourEntity;
+import tour_agency.exception.ClientNotFoundException;
 import tour_agency.repositories.ClientRepository;
 import tour_agency.repositories.FeatureRepository;
 import tour_agency.repositories.TourRepository;
@@ -33,16 +33,14 @@ public class TourRecommendServiceImpl implements TourRecommendService {
 
     @Override
     public Set<TourDTO> recommendTours(ClientDTO clientDTO) {
-        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId());
-        if (clientEntity == null) {
-            throw new EntityNotFoundException();
-        }
+        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId()).orElseThrow(() -> new ClientNotFoundException("Client doesn't exist"));
         Set<ClientEntity> clientEntitySet = Collections.singleton(clientEntity);
         Set<FeatureEntity> featureEntities = featureRepository.findByClient(clientEntitySet);
         Set<TourEntity> tourEntitySet = tourRepository.findByFeatureEntitySet(featureEntities);
-        Set <TourDTO> tourDTOs = tourEntitySet.stream()
+        Set<TourDTO> tourDTOs = tourEntitySet.stream()
                 .map(tourEntity -> modelMapper.map(tourEntity, TourDTO.class))
                 .collect(Collectors.toSet());
         return tourDTOs;
     }
 }
+

@@ -24,8 +24,8 @@ public interface TourRepository extends GeneralRepository<TourEntity, Long> {
             "(:costHigh is null or t.cost <= :costHigh) and " +
             "(:numberSeatsLow is null or t.numberSeats >= :numberSeatsLow) and " +
             "(:numberSeatsHigh is null or t.numberSeats <= :numberSeatsHigh) and " +
-            "(:startDate is null or t.startDate >= :startDate) and " +
-            "(:finishDate is null or t.finishDate <= :finishDate)")
+            "(t.startDate >= :startDate) and " +
+            "(t.finishDate <= :finishDate)")
     Set<TourEntity> findToursByCriteria(@Param(value = "direction") String direction,
                                         @Param(value = "costLow") Integer costLow,
                                         @Param(value = "costHigh") Integer costHigh,
