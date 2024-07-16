@@ -13,7 +13,6 @@ public class ParametrsDTO {
     private LocalDate startDate;
     private LocalDate finishDate;
     public ParametrsDTO() {
-
     }
 
     public ParametrsDTO(String direction, Integer costLow, Integer costHigh, Integer numberSeatsLow, Integer numberSeatsHigh, LocalDate startDate, LocalDate finishDate) {

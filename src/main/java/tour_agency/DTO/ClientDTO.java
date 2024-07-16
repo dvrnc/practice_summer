@@ -25,7 +25,7 @@ public class ClientDTO {
         this.bookingEntitySet = bookingEntitySet;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

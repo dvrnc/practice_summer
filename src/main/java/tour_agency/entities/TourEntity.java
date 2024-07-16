@@ -18,13 +18,13 @@ public class TourEntity extends BaseEntity {
     private Set<BookingEntity> bookingEntitySet;
     private Set<FeatureEntity> featureEntitySet;
 
-    public TourEntity(String direction, Integer cost, Integer numberSeats, LocalDate startDate, CarrierEntity carrier, LocalDate finishDate, Set<BookingEntity> bookingEntitySet, Set<FeatureEntity> featureEntitySet) {
+    public TourEntity(String direction, Integer cost, Integer numberSeats, LocalDate startDate,  LocalDate finishDate,CarrierEntity carrier, Set<BookingEntity> bookingEntitySet, Set<FeatureEntity> featureEntitySet) {
         this.direction = direction;
         this.cost = cost;
         this.numberSeats = numberSeats;
         this.startDate = startDate;
-        this.carrier = carrier;
         this.finishDate = finishDate;
+        this.carrier = carrier;
         this.bookingEntitySet = bookingEntitySet;
         this.featureEntitySet = featureEntitySet;
     }

@@ -4,26 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e003bc54-a8fa-4e72-afd4-9eb54bcd0cd0" name="Changes" comment="two service">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourHistoryClientServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourHistoryClientService.java" afterDir="false" />
+    <list default="true" id="e003bc54-a8fa-4e72-afd4-9eb54bcd0cd0" name="Changes" comment="three service done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/config/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourHistoryClientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourPreferenceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tour_agency/controllers/TourRecommendController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/ClientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/ClientDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/ParametrsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/ParametrsDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/TourDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/DTO/TourDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/CarrierEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/CarrierEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/ClientEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/ClientEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/EmployeeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/EmployeeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/FeatureEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/FeatureEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/entities/TourEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/entities/TourEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/BookingRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/CarrierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/CarrierRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/ClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/EmployeeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/FeatureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/FeatureRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/GeneralRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/GeneralRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/TourRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/repositories/TourRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourCreateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourPreferenceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourHistoryClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourHistoryClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourPreferenceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourPreferenceServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourRecommendServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/Impl/TourRecommendServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourCreateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourPreferenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourHistoryClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourHistoryClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourPreferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourPreferenceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourRecommendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tour_agency/services/TourRecommendService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,29 +65,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tour_agency.Main" />
@@ -128,7 +131,9 @@
       <workItem from="1720861598784" duration="2874000" />
       <workItem from="1720948617386" duration="7171000" />
       <workItem from="1720956913080" duration="1723000" />
-      <workItem from="1720960095519" duration="10636000" />
+      <workItem from="1720960095519" duration="10848000" />
+      <workItem from="1721035601039" duration="14802000" />
+      <workItem from="1721123991774" duration="6238000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -170,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720966072166</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="three service done">
+      <option name="closed" value="true" />
+      <created>1720970959611</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720970959611</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +206,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="probny" />
     <MESSAGE value="two service" />
-    <option name="LAST_COMMIT_MESSAGE" value="two service" />
+    <MESSAGE value="three service done" />
+    <option name="LAST_COMMIT_MESSAGE" value="three service done" />
   </component>
 </project>
