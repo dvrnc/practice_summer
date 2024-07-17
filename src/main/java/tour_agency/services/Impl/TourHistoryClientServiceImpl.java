@@ -30,9 +30,16 @@ public class TourHistoryClientServiceImpl implements TourHistoryClientService {
     public Set<TourDTO> historyClientTours(ClientDTO clientDTO) {
         ClientEntity clientEntity = clientRepository.findById(clientDTO.getId()).orElseThrow(() -> new ClientNotFoundException("Client doesn't exist"));
         Set<TourEntity> tourEntitySet = tourRepository.findToursByClientId(clientEntity);
-        Set<TourDTO> tourDTOs = tourEntitySet.stream()
+        Set<String> directions = tourEntitySet.stream().map(TourEntity::getDirection).collect(Collectors.toSet());
+        Set<TourEntity> recommendations = tourRepository.findToursByDirections(directions);
+        Set<TourEntity> checkedRecommendations = check(recommendations, clientEntity);
+        Set<TourDTO> tourDTOs = checkedRecommendations.stream()
                 .map(tourEntity -> modelMapper.map(tourEntity, TourDTO.class))
                 .collect(Collectors.toSet());
         return tourDTOs;
+    }
+    private Set<TourEntity> check (Set<TourEntity> tourEntitySet, ClientEntity clientEntity){
+        tourEntitySet.removeIf(tourEntity -> tourEntity.getBookingEntitySet().stream().anyMatch(bookingEntity -> bookingEntity.getClient().equals(clientEntity)));
+        return tourEntitySet;
     }
 }

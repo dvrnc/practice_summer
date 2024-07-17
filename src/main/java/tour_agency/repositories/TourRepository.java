@@ -37,5 +37,7 @@ public interface TourRepository extends GeneralRepository<TourEntity, Long> {
     @Query("select t from TourEntity t join t.bookingEntitySet b where b.client = :clientId group by t.id order by COUNT(t) desc ")
     Set<TourEntity> findToursByClientId(@Param(value = "clientId") ClientEntity clientId);
 
+    @Query("select t from TourEntity t where t.direction in :directions")
+    Set<TourEntity> findToursByDirections (@Param(value = "directions") Set<String> directions);
 }
 
