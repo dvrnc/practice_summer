@@ -7,13 +7,13 @@ import tour_agency.DTO.TourDTO;
 import tour_agency.entities.ClientEntity;
 import tour_agency.entities.FeatureEntity;
 import tour_agency.entities.TourEntity;
-import tour_agency.exception.ClientNotFoundException;
 import tour_agency.repositories.ClientRepository;
 import tour_agency.repositories.FeatureRepository;
 import tour_agency.repositories.TourRepository;
 import tour_agency.services.TourRecommendService;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -33,10 +33,10 @@ public class TourRecommendServiceImpl implements TourRecommendService {
 
     @Override
     public Set<TourDTO> recommendTours(ClientDTO clientDTO) {
-        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId()).orElseThrow(() -> new ClientNotFoundException("Client doesn't exist"));
-        Set<ClientEntity> clientEntitySet = Collections.singleton(clientEntity);
-        Set<FeatureEntity> featureEntities = featureRepository.findByClient(clientEntitySet);
-        Set<TourEntity> tourEntitySet = tourRepository.findByFeatureEntitySet(featureEntities);
+        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId());
+        List<ClientEntity> clientEntitySet = Collections.singletonList(clientEntity);
+        List<FeatureEntity> featureEntities = featureRepository.findByClient(clientEntitySet);
+        List<TourEntity> tourEntitySet = tourRepository.findByFeatureEntitySet(featureEntities);
         Set<TourDTO> tourDTOs = tourEntitySet.stream()
                 .map(tourEntity -> modelMapper.map(tourEntity, TourDTO.class))
                 .collect(Collectors.toSet());
