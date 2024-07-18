@@ -1,8 +1,7 @@
 package tour_agency.repositories;
 
-import org.springframework.stereotype.Repository;
 import tour_agency.entities.ClientEntity;
 
-@Repository
-public interface ClientRepository extends GeneralRepository<ClientEntity, Long> {
+public interface ClientRepository  {
+    ClientEntity findById(Long id);
 }

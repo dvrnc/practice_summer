@@ -8,6 +8,7 @@ import tour_agency.entities.TourEntity;
 import tour_agency.repositories.TourRepository;
 import tour_agency.services.TourPreferenceService;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 public class TourPreferenceServiceImpl implements TourPreferenceService {
     private final TourRepository tourRepository;
     private final ModelMapper modelMapper;
+
 
     public TourPreferenceServiceImpl(TourRepository tourRepository, ModelMapper modelMapper) {
         this.tourRepository = tourRepository;
@@ -24,7 +26,7 @@ public class TourPreferenceServiceImpl implements TourPreferenceService {
     @Override
     public Set<TourDTO> findTours(ParametrsDTO parametrsDTO) {
         System.out.println(parametrsDTO);
-        Set<TourEntity> tourEntities = tourRepository.findToursByCriteria(
+        List <TourEntity> tourEntities = tourRepository.findToursByCriteria(
                 parametrsDTO.getDirection(),
                 parametrsDTO.getCostLow(),
                 parametrsDTO.getCostHigh(),

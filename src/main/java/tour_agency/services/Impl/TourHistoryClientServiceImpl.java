@@ -6,11 +6,11 @@ import tour_agency.DTO.ClientDTO;
 import tour_agency.DTO.TourDTO;
 import tour_agency.entities.ClientEntity;
 import tour_agency.entities.TourEntity;
-import tour_agency.exception.ClientNotFoundException;
 import tour_agency.repositories.ClientRepository;
 import tour_agency.repositories.TourRepository;
 import tour_agency.services.TourHistoryClientService;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -28,17 +28,17 @@ public class TourHistoryClientServiceImpl implements TourHistoryClientService {
 
     @Override
     public Set<TourDTO> historyClientTours(ClientDTO clientDTO) {
-        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId()).orElseThrow(() -> new ClientNotFoundException("Client doesn't exist"));
-        Set<TourEntity> tourEntitySet = tourRepository.findToursByClientId(clientEntity);
-        Set<String> directions = tourEntitySet.stream().map(TourEntity::getDirection).collect(Collectors.toSet());
-        Set<TourEntity> recommendations = tourRepository.findToursByDirections(directions);
-        Set<TourEntity> checkedRecommendations = check(recommendations, clientEntity);
+        ClientEntity clientEntity = clientRepository.findById(clientDTO.getId());
+        List <TourEntity> tourEntitySet = tourRepository.findToursByClientId(clientEntity);
+        List<String> directions = tourEntitySet.stream().map(TourEntity::getDirection).collect(Collectors.toList());
+        List <TourEntity> recommendations = tourRepository.findToursByDirections(directions);
+        List<TourEntity> checkedRecommendations = check(recommendations, clientEntity);
         Set<TourDTO> tourDTOs = checkedRecommendations.stream()
                 .map(tourEntity -> modelMapper.map(tourEntity, TourDTO.class))
                 .collect(Collectors.toSet());
         return tourDTOs;
     }
-    private Set<TourEntity> check (Set<TourEntity> tourEntitySet, ClientEntity clientEntity){
+    private List<TourEntity> check (List<TourEntity> tourEntitySet, ClientEntity clientEntity){
         tourEntitySet.removeIf(tourEntity -> tourEntity.getBookingEntitySet().stream().anyMatch(bookingEntity -> bookingEntity.getClient().equals(clientEntity)));
         return tourEntitySet;
     }
